@@ -1,2 +1,17 @@
- ansible_user: ec2-user
- ansible_password: DevOps321
+ansible_user: ec2-user
+ansible_password: DevOps321
+mysql_root_password: RoboShop@1
+shipping_db_user: shipping
+shipping_db_password: RoboShop@1
+rabbitmq_user: roboshop
+rabbitmq_password: roboshop123
+
+mongodb_host: mongodb.mithul.space
+redis_host: redis.mithul.space
+mysql_host: mysql.mithul.space
+rabbitmq_host: rabbitmq.mithul.space
+catalogue_host: catalogue.mithul.space
+user_host: user.mithul.space
+cart_host: cart.mithul.space
+shipping_host: shipping.mithul.space
+payment_host: payment.mithul.space
