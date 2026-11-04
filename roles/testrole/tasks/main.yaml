@@ -1,3 +1,0 @@
-- name: test roles
-  debug:
-    msg: "roles are working fine"

@@ -1,11 +1,11 @@
-# - name: install and configure {{component}}
-#   hosts: {{ component }}
-#   become: yes
-#   roles:
-#     - {{ component }}
-
-- name: Test Roles
-  hosts: local
-  connection: local
+- name: install and configure {{component}}
+  hosts: "{{ component }}"
+  become: yes
   roles:
-    - testrole
+    - "{{ component }}"
+
+# - name: Test Roles
+#   hosts: local
+#   connection: local
+#   roles:
+#     - testrole
