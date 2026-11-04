@@ -26,6 +26,7 @@
     when: cities_count.rc != 0 or cities_count.stdout | int == 0
     tags:
     - mysql
+    
 
   - name: create app user in mysql
     shell: mysql -h "{{ mysql_host }}" -u root -p{{ mysql_root_password }} < /app/db/app-user.sql
