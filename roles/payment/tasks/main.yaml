@@ -6,6 +6,7 @@
 - name: python setup
   include_role: 
     name: common  
+    tasks_from: python-setup.yaml
 
 - name: systemd service
   include_role: 
