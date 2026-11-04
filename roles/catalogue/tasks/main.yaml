@@ -1,12 +1,12 @@
-- name: node js setup
-  include_roles: 
-    name: common
-    tasks_from: nodejs-setup.yaml
-
 - name: app setup
   include_roles: 
     name: common
     tasks_from: app-setup.yaml
+    
+- name: node js setup
+  include_roles: 
+    name: common
+    tasks_from: nodejs-setup.yaml
 
 - name: copy mongo db repo file
   copy:
