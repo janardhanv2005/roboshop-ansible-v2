@@ -1,11 +1,12 @@
 #ansible_user: ec2-user
 #ansible_password: DevOps321
+#mysql_root_password: RoboShop@1
 
 #Using Ansible vault
 ansible_user: "{{ vault_ansible_user }}"
 ansible_password: "{{ vault_ansible_password }}"
 
-mysql_root_password: RoboShop@1
+mysql_root_password: "{{ vault_mysql_root_password }}"
 shipping_db_user: shipping
 shipping_db_password: RoboShop@1
 rabbitmq_user: roboshop
