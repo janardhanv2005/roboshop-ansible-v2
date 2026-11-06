@@ -1,11 +1,31 @@
-- name: install and configure {{component}}
-  hosts: "{{ component }}"
-  become: yes
-  roles:
-    - "{{ component }}"
+# - name: install and configure {{component}}
+#   hosts: "{{ component }}"
+#   become: yes
+#   roles:
+#     - "{{ component }}"
 
 # - name: Test Roles
 #   hosts: local
 #   connection: local
 #   roles:
 #     - testrole
+
+- name: Install and configure all Roboshop components
+  hosts: all
+  become: yes
+  
+  tasks:
+    - name: Install and configure components
+      ansible.builtin.include_role:
+        name: "{{ item }}"
+      loop:
+        - mongodb
+        - redis
+        - mysql
+        - rabbitmq
+        - catalogue
+        - cart
+        - user
+        - shipping
+        - payment
+        - frontend
