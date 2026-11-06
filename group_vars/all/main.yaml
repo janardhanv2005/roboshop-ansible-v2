@@ -3,10 +3,16 @@
 #mysql_root_password: RoboShop@1
 
 #Using Ansible vault
-ansible_user: "{{ vault_ansible_user }}"
-ansible_password: "{{ vault_ansible_password }}"
+#ansible_user: "{{ vault_ansible_user }}"
+#ansible_password: "{{ vault_ansible_password }}"
 
-mysql_root_password: "{{ vault_mysql_root_password }}"
+#mysql_root_password: "{{ vault_mysql_root_password }}"
+
+#Using AWS Secrets Manager
+ansible_user: "{{ lookup('amazon.aws.aws_secret', 'roboshop/dev/ansible', region='us-east-1') | from_json | json_query('ansible_user') }}"
+ansible_password: "{{ lookup('amazon.aws.aws_secret', 'roboshop/dev/ansible', region='us-east-1') | from_json | json_query('ansible_password') }}"
+mysql_root_password: "{{ lookup('amazon.aws.aws_secret', 'roboshop/dev/ansible', region='us-east-1') | from_json | json_query('mysql_root_password') }}"
+
 shipping_db_user: shipping
 shipping_db_password: RoboShop@1
 rabbitmq_user: roboshop
